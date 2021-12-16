@@ -1,0 +1,6 @@
+framework module Pods_AndresAppNoStoryBoard_AndresAppNoStoryBoardUITests {
+  umbrella header "Pods-AndresAppNoStoryBoard-AndresAppNoStoryBoardUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
