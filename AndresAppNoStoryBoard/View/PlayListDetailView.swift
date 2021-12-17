@@ -105,23 +105,25 @@ class PlayListDetailView: UIViewController, TrackAddedToPlaylistDelegate/*, Trac
                 playListTableView.backgroundColor = UIColor(named: "BackgroundColor")?.withAlphaComponent(1.5)
                 playListTableView.separatorColor = UIColor.systemBlue.withAlphaComponent(0.5)
                 playListTableView.separatorStyle = .singleLine
-                playListTableView.register(UITableViewCell.self, forCellReuseIdentifier: "track")
+                playListTableView.register(PlaylistCell.self, forCellReuseIdentifier: "reuseIdentifier")
+
+                //playListTableView.register(UITableViewCell.self, forCellReuseIdentifier: "track")
                 playListTableView.dataSource = self
                 playListTableView.delegate = self
                 playListTableView.layer.cornerRadius = 10
             tableView.heightAnchor.constraint(greaterThanOrEqualToConstant: 60).isActive = true
     }
     
-    func configurePlayListTable(){
-        self.view.addSubview(playListTableView)
-        playListTableView.backgroundColor = UIColor(named: "BackgroundColor")?.withAlphaComponent(0.5)
-        playListTableView.separatorColor = UIColor.systemBlue.withAlphaComponent(0.5)
-        playListTableView.separatorStyle = .singleLine
-        playListTableView.register(UITableViewCell.self, forCellReuseIdentifier: "track")
-        playListTableView.dataSource = self
-        playListTableView.delegate = self
-        playListTableView.layer.cornerRadius = 10
-    }
+//    func configurePlayListTable(){
+//        self.view.addSubview(playListTableView)
+//        playListTableView.backgroundColor = UIColor(named: "BackgroundColor")?.withAlphaComponent(0.5)
+//        playListTableView.separatorColor = UIColor.systemBlue.withAlphaComponent(0.5)
+//        playListTableView.separatorStyle = .singleLine
+//        playListTableView.register(UITableViewCell.self, forCellReuseIdentifier: "track")
+//        playListTableView.dataSource = self
+//        playListTableView.delegate = self
+//        playListTableView.layer.cornerRadius = 10
+//    }
 
     @objc func deleteAndReload(_ notification: NSNotification) {
         
@@ -159,20 +161,43 @@ extension PlayListDetailView: UITableViewDelegate, UITableViewDataSource {
         tracksArray.count
     }
  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "track", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! PlaylistCell
         let track = tracksArray[indexPath.row]
-        cell.backgroundColor = UIColor(named: "BackgroundColor")?.withAlphaComponent(1.5)
-        cell.textLabel?.text = track.title
-        cell.preservesSuperviewLayoutMargins = false
-        cell.separatorInset = UIEdgeInsets(top: 2.0, left: 5.0, bottom: 2.0, right: 5.0)
-        cell.layoutMargins = UIEdgeInsets.zero
-        return cell
+//        cell.backgroundColor = UIColor(named: "BackgroundColor")?.withAlphaComponent(1.5)
+//        cell.textLabel?.text = track.title
+//        cell.preservesSuperviewLayoutMargins = false
+//        cell.separatorInset = UIEdgeInsets(top: 2.0, left: 5.0, bottom: 2.0, right: 5.0)
+//        cell.layoutMargins = UIEdgeInsets.zero
+//        return cell
+     
+//     let track = misTracks[indexPath.row]
+     //print(track)
+     cell.displayingTrack = track
+//     cell.delegate = delegate
+     cell.backgroundColor = UIColor(named: "BackgroundColor")
+     cell.setCell()
+     return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 30
+        return 80
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        tableView.deselectRow(at: indexPath, animated: true)
    }
-    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+//            var index: Int = indexPath
+//            tracksArray.remove(at: index)
+//            self.playListTableView.reloadData()
+            playListTableView.beginUpdates()
+            tracksArray.remove(at: indexPath.row)
+            playListTableView.deleteRows(at: [indexPath], with: .fade)
+            playListTableView.endUpdates()
+
+        }
+    }
 }

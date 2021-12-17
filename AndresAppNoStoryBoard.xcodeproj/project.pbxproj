@@ -11,6 +11,7 @@
 		2E140BBD276A18D7004AEDF3 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E140BBB276A18D7004AEDF3 /* Model.xcdatamodeld */; };
 		2E140BBF276A7C5E004AEDF3 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E140BBE276A7C5E004AEDF3 /* DownloadManager.swift */; };
 		2E140BC1276A8B98004AEDF3 /* RestServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E140BC0276A8B98004AEDF3 /* RestServiceManager.swift */; };
+		2E4CFD62276C23C300A1A499 /* PlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4CFD61276C23C300A1A499 /* PlaylistCell.swift */; };
 		2E983F782767C30C0083CF4B /* playPauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E983F772767C30C0083CF4B /* playPauseButton.swift */; };
 		2E983F7A2767D6030083CF4B /* PlayListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E983F792767D6030083CF4B /* PlayListDetailView.swift */; };
 		2E983F7E27691B5F0083CF4B /* AddToPlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E983F7D27691B5F0083CF4B /* AddToPlaylistView.swift */; };
@@ -71,6 +72,7 @@
 		2E140BBC276A18D7004AEDF3 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		2E140BBE276A7C5E004AEDF3 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		2E140BC0276A8B98004AEDF3 /* RestServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestServiceManager.swift; sourceTree = "<group>"; };
+		2E4CFD61276C23C300A1A499 /* PlaylistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCell.swift; sourceTree = "<group>"; };
 		2E983F772767C30C0083CF4B /* playPauseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playPauseButton.swift; sourceTree = "<group>"; };
 		2E983F792767D6030083CF4B /* PlayListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListDetailView.swift; sourceTree = "<group>"; };
 		2E983F7D27691B5F0083CF4B /* AddToPlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToPlaylistView.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				2E983F7F27691CB20083CF4B /* AddToPlaylistCell.swift */,
+				2E4CFD61276C23C300A1A499 /* PlaylistCell.swift */,
 				2ECF09DA2764F82200617054 /* TrackTableCellView.swift */,
 			);
 			path = CustomCells;
@@ -196,7 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				2ECF09D02763D2EC00617054 /* LoginViewModel.swift */,
-				2E983F772767C30C0083CF4B /* playPauseButton.swift */,
 				2ECF09D22763F67800617054 /* RegisterViewModel.swift */,
 				2ECF09E92766C94700617054 /* AudioPlayerViewModel.swift */,
 			);
@@ -267,6 +269,7 @@
 				2ECF09DC27665CA500617054 /* AudioPlayerView.swift */,
 				2E983F792767D6030083CF4B /* PlayListDetailView.swift */,
 				2E983F7D27691B5F0083CF4B /* AddToPlaylistView.swift */,
+				2E983F772767C30C0083CF4B /* playPauseButton.swift */,
 				2E983F8127691CC60083CF4B /* CustomCells */,
 			);
 			path = View;
@@ -540,6 +543,7 @@
 				2ED1FDF3275AE94F00BB66CD /* MainTabBar.swift in Sources */,
 				2E983F8027691CB20083CF4B /* AddToPlaylistCell.swift in Sources */,
 				2ECF09D32763F67800617054 /* RegisterViewModel.swift in Sources */,
+				2E4CFD62276C23C300A1A499 /* PlaylistCell.swift in Sources */,
 				2E140BBD276A18D7004AEDF3 /* Model.xcdatamodeld in Sources */,
 				2ECF09CB2762F68A00617054 /* WelcomeView.swift in Sources */,
 				2ED1FDEF275AE94F00BB66CD /* AppDelegate.swift in Sources */,
